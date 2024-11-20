@@ -1,6 +1,7 @@
 <?php
 require_once("./config/autoload.php");
 require_once "./auth/DbManager.php";
+
 use auth\DbManager;
 
 session_start();
@@ -22,8 +23,8 @@ if (isset($_POST['submit'])) {
     if ($db->checkPasswordAndMailVerification($mdp, $email)) {
         $_SESSION['login'] = true;
         header('Location: ./authentificated.php');
-    } else{
-        $_SESSION['error'] = "Mot de passe ou mail incorrect";
+    } else {
+        $_SESSION['error'] = "<p style='color : red'>Erreur : Mot de passe ou mail incorrect</p>";
     }
 };
 
@@ -54,7 +55,9 @@ if (isset($_POST['submit'])) {
     <input type="submit" name="submit" value="Connexion">
 </form>
 <?php if (isset($_SESSION['error'])): ?>
-    <p style="color : red"><?php echo $_SESSION['error'] ; ?></p>
-<?php endif ?>
+    <?php echo $_SESSION['error']; ?>
+<?php else : ?>
+    <?php echo $_SESSION['sucess']; ?>
+<?php endif; ?>
 </body>
 </html>
