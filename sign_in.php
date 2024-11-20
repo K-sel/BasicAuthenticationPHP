@@ -56,7 +56,7 @@ if (isset($_POST['submit'])) {
 </form>
 <?php if (isset($_SESSION['error'])): ?>
     <?php echo $_SESSION['error']; ?>
-<?php else : ?>
+<?php elseif (isset($_SESSION['sucess'])): ?>
     <?php echo $_SESSION['sucess']; ?>
 <?php endif; ?>
 </body>

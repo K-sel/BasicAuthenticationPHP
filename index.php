@@ -7,6 +7,7 @@ use auth\DbManager;
 session_start();
 unset($_SESSION['verify']);
 unset($_SESSION['error']);
+unset($_SESSION['sucess']);
 
 //Initalisation de la base de données
 $db = new DbManager();

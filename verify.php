@@ -14,7 +14,7 @@ $token = filter_input(INPUT_GET, 'token', FILTER_VALIDATE_REGEXP, ["options" => 
 if ($db->checkToken($token)) {
     $_SESSION['verify'] = true;
     $_SESSION['sucess'] = "<p style='color : green'>Succès : Votre compte a été vérifié, veuillez vous authentifier,</p>";
-        header('Location: ./sign_in.php');
+    header('Location: ./sign_in.php');
 } else {
     header('Location: ./index.php');
 }

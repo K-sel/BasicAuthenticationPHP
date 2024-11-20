@@ -9,6 +9,7 @@ session_start();
 unset($_SESSION['verify']);
 unset($_SESSION['error']);
 unset($_SESSION['created']);
+unset($_SESSION['sucess']);
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = filter_input(INPUT_POST, 'name', FILTER_DEFAULT);
@@ -25,6 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         if ($db->ajouteUtilisateur($personne)) {
             $_SESSION['created'] = true;
+
         } else {
             $_SESSION['error'] = "<p style='color=red;'>Ce compte existe déja, veuillez vous authentifier ici <a href='sign_in.php'>sign in</a></p>";
         }

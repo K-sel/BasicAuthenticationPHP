@@ -5,7 +5,7 @@ require_once "./auth/DbManager.php";
 session_start();
 //Réinitalisation de la variable erreur
 unset($_SESSION['error']);
-
+unset($_SESSION['sucess']);
 ?>
 
 <!doctype html>
