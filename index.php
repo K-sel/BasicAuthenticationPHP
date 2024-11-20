@@ -25,7 +25,7 @@ $db->creeTableUtilisateur();
 </head>
 
 <body>
-    <h1>Welcome to our website</h1>
+    <h1 class="text-amber-700">Welcome to our website</h1>
     <!--Si l'utilisateur n'est pas encore loggé, on lui propose de se loger ou de se créer un compte-->
     <?php if (!isset($_SESSION['login'])): ?>
     <a href="sign_in.php">Sign in</a>
