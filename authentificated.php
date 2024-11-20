@@ -3,8 +3,8 @@ require_once("./config/autoload.php");
 require_once "./auth/DbManager.php";
 
 session_start();
+//Réinitalisation de la variable erreur
 unset($_SESSION['error']);
-
 
 ?>
 
@@ -24,6 +24,7 @@ unset($_SESSION['error']);
 </header>
 <body>
 <div>
+    <!-- Si le user est loggé, il a accès au contenu-->
     <?php if (isset($_SESSION['login'])) : ?>
         <h1>Bienvenue dans votre dashboard</h1>
         <?php if (isset($_SESSION['verify'])) : ?>
@@ -31,6 +32,7 @@ unset($_SESSION['error']);
         <?php endif; ?>
         <p> Where does it come from? Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
     <?php else : ?>
+        <!--Proposition de création de compte ou de retour a l'accueil-->
         <h1>Vous n'avez pas accès à ce contenu</h1>
         <button onclick="window.location.href='index.php';">Accueil</button>
         <button onclick="window.location.href='sign_in.php';">Se connecter</button>

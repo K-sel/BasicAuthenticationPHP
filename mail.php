@@ -16,9 +16,9 @@ try {
             '<a href="http://localhost/ProgServ/Authentification/verify.php?token=' . urlencode($token) . '">Vérifier mon mail</a>');
     $result = $mailer->send($email);
     if ($result == null) {
-        echo "<BR>Un mail a été envoyé ! <a href='http://localhost:8025'>voir le mail</a>";
+        $_SESSION['succes'] =  "<BR>Un mail a été envoyé ! <a href='http://localhost:8025'>voir le mail</a>";
     } else {
-        echo "Un problème lors de l'envoi du mail est survenu";
+        $_SESSION['error'] =  "Un problème lors de l'envoi du mail est survenu";
     }
 } catch (Exception $e) {
     echo $e->getMessage();

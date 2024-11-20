@@ -1,4 +1,5 @@
 <?php
+
 namespace auth;
 
 use Exception;
@@ -141,10 +142,6 @@ COMMANDE_SQL;
                 // Vérifie le mot de passe et si l'utilisateur a vérifié son email
                 if ($result && password_verify($password, $result['password']) && $result['is_verified']) {
                     $bool = true;
-                } else if (!$result['is_verified']) {
-                    echo "Votre mail n'est pas vérifié";
-                } else {
-                    echo "Mot de passe ou nom d'utilisateur incorrect";
                 }
             }
         }

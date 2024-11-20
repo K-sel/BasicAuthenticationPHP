@@ -76,8 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <br>
     <input type="submit" name="submit" value="Create my account">
 </form>
-<?php if (isset($_SESSION['created'])): ?>
-<p style="color : green">Succès : Votre compte a été crée</p>
+<?php if (isset($_SESSION['created']) && isset($_SESSION['succes'])): ?>
+<p style="color : green">Succès : Votre compte a été crée, <?php echo $_SESSION['succes']; ?></p>
 <?php endif ?>
 <?php if (isset($_SESSION['error'])) {
     echo $_SESSION['error'];
