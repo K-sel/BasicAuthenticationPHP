@@ -7,7 +7,7 @@ session_start();
 unset($_SESSION['verify']);
 unset($_SESSION['error']);
 
-
+//Initalisation de la base de données 
 $db = new DbManager();
 $db->creeTableUtilisateur();
 ?>
